@@ -1,0 +1,44 @@
+body{
+    margin:0;
+    font-family:"Roboto Flex",sans-serif;
+    font-weight: 400;
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:rgb(235, 235, 0);
+    padding: 10px 20px;
+}
+header img{
+    height: 60px;
+    width:auto;
+    border:1px solid yellow;
+    border-radius: 76px;
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    margin: 25px;
+    padding:0px 10px;
+}
+nav a{
+    text-decoration:none;
+    color:black;
+    font-weight: bold;
+    font-size:16px;
+}
+.matricule-se{
+    display:block;
+    background-color: black;
+    padding:12px 24px;
+    text-decoration:none;
+    color:white;
+    font-family:"Roboto Flex",sans-serif;
+    font-weight: 800;
+    border-radius: 30px;
+}
