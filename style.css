@@ -84,7 +84,23 @@ footer .informações h5{
 footer .informações p{
     font-size:16px;
 }
-main{
-    background-color:black;
-    color:white;
+main .p1{
+    padding: 3px 10px;
+    background-color: black;
+    color: white;
+}
+main .p1 strong{
+    color: yellow;
+}
+main .p1 .conteudo .conteudo-texto{
+    display: flex;
+    flex-direction: column;
+}
+main .p1 .conteudo{
+    display: flex;
+    align-items: center;
+}
+main .p1 .conteudo img{
+    width: 800px;
+    height: auto;
 }
