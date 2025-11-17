@@ -217,3 +217,115 @@ p#nome{
 p#aula{
     margin: 12px 0px 15px 0px;
 }
+.linhacard{
+    margin: 15px 0px 8px 0px;
+    height: 3px;
+    background-color: white;
+}
+.p4{
+    background-color: black;
+    margin: 0px 0px;
+}
+h1#titulo1{
+    padding: 30px 0px 0px 0px;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+h1#titulo2{
+    padding: 0px 0px 20px 0px;
+    color: white;
+    text-align: center;
+    margin: 0;
+}   
+.card {
+    width: 90%;
+    height: auto;
+    background: #2c2c2c;    
+    border-radius: 52px;       
+    display: flex;            
+    align-items: center;       
+    padding: 0 45px;           
+    gap: 29px;    
+    margin: 0 auto;             
+}
+
+.card-icon {
+    height: 130px;             
+    width: auto;
+}
+
+.card-text {
+    font-size: 32px;          
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.dp4{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 80px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tituloamarelo {
+    color: #FFD900;
+    text-align: center;
+    margin: 30px 0;
+}
+.planos{
+    width: 294px;
+    height: 430px;
+    background-color: black;
+    border: 3px solid #FFD900;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    gap: 90px;
+}
+.planosG {
+    padding: 50px;
+    display: flex;
+    gap: 91px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+.linky{
+    background-color: #FFD900;
+    color: white;
+    display: flex;
+    margin: auto;
+    padding: 9px;
+    border-radius: 28px;
+}
+/* RESPONSIVIDADE REAL PARA CELULAR PAGINA 4 */
+@media (max-width: 600px) {
+
+    .card {
+        width: 90%;               
+        height: auto;             
+        flex-direction: column;   
+        padding: 20px;
+        gap: 15px;
+        border-radius: 30px;
+    }
+
+    .card-icon {
+        height: 70px;             
+    }
+
+    .card-text {
+        font-size: 22px;         
+        text-align: center;
+    }
+
+    .dp4 {
+        gap: 30px;               
+        margin: 40px 0;
+    }
+}
