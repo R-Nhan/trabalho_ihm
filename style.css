@@ -25,6 +25,10 @@ nav ul{
 nav li{
     margin: 25px;
     padding:0px 10px;
+    transition:all 0.3s ease;
+}
+nav li :hover{
+    color:white;
 }
 nav a{
     text-decoration:none;
@@ -41,6 +45,11 @@ nav a{
     font-family:"Roboto Flex",sans-serif;
     font-weight: 800;
     border-radius: 30px;
+    transition:all 0.3s ease;
+}
+.matricule-se :hover{
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
 footer{
     display:flex;
@@ -150,6 +159,14 @@ main .p1 .topo{
     font-weight: 600;
     text-decoration: none;
     align-self: center;
+    transition: transform 0.2s ease;
+}
+.topo .botão-planos :hover{
+    background-color: white;       /* O fundo vira branco */
+    color: black;                  /* A letra vira preta */
+    transform: scale(1.05);        /* O botão aumenta 5% de tamanho */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Um brilho suave */
+    cursor: pointer;
 }
 
 .topo .botões .gympass{
@@ -170,6 +187,15 @@ main .p1 .topo{
     gap: 20px;
     right: 30px;
     z-index: 1000;
+}
+.botões img, 
+.botões .gympass {
+    transition: transform 0.2s ease;
+}
+.botões img:hover, 
+.botões .gympass:hover {
+    transform: scale(1.2); 
+    cursor: pointer;
 }
 .p2 {
     background-color: black;
@@ -418,4 +444,18 @@ h1#titulo2{
 }
 .p5 .linha_meio{
     padding-bottom: 20px;
+}
+.p5 .botao {
+    transition: transform 0.2s ease;
+}
+.p5 .botao :hover{
+    transform: scale(1.2); 
+    cursor: pointer;
+}
+footer .logos{
+    transition: transform 0.2s ease;
+}
+footer .logos :hover{
+    transform: scale(1.1);
+    cursor:pointer;
 }
