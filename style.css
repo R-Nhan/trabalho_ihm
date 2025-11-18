@@ -322,7 +322,8 @@ h1#titulo2{
     color: white;
     text-align: center;
     font-size: 22px;
-    gap: 90px;
+    gap: 110px;
+    padding: 50px;
 }
 .planosG {
     padding: 50px;
