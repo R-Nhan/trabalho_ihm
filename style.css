@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
     margin:0;
     font-family:"Roboto Flex",sans-serif;
@@ -104,10 +110,13 @@ main .p1 strong{
 main .p1 .conteudo .conteudo-texto{
     display: flex;
     flex-direction: column;
+    font-size:clamp(0.3rem,10vw,1.5rem);
 }
 main .p1 .conteudo{
     display: flex;
     align-items: center;
+    margin: 0 auto;
+    max-width: 2000px;
 }
 main .p1 .conteudo .imagem-gradiente{
     width: 800px;
@@ -134,6 +143,7 @@ main .p1 .topo{
     justify-content: center; 
     align-items: flex-start;
     text-align: left;
+    margin: 0 auto;
 }
 .topo h1{
     font-size: 32px;
@@ -199,7 +209,7 @@ main .p1 .topo{
 }
 .p2 {
     background-color: black;
-    margin: 0;
+    margin: 0 auto;
 }
 h1#centro{
     text-align: center;
@@ -383,6 +393,7 @@ h1#titulo2{
     padding: 0px 10px;
     background-color: black;
     color: white;
+    margin: 0 auto;
 }
 .p5 .topo{
     background: 
@@ -458,4 +469,140 @@ footer .logos{
 footer .logos :hover{
     transform: scale(1.1);
     cursor:pointer;
+}
+
+/* RESPONSIVIDADE (FEITO COM AUXILIO DE IA) */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Coloca logo em cima e menu embaixo */
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Itens do menu empilhados */
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav li {
+        margin: 5px 0; /* Reduz a margem */
+    }
+    
+    /* Ajuste do footer para não ficar muito grande */
+    footer .logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    /* Remove a altura fixa da tela inicial para caber o conteúdo */
+    main .p1 .topo {
+        min-height: auto; 
+        padding: 100px 20px 40px 20px; /* Mais espaço no topo para não cortar */
+        background-attachment: scroll; /* Fixa bug de background no iOS */
+    }
+
+    .topo h1 {
+        font-size: 28px; /* Diminui a fonte */
+    }
+
+    /* Ajusta a linha decorativa que tem largura fixa de 500px */
+    .topo .linha {
+        width: 100%; 
+        margin-bottom: 50px;
+    }
+
+    /* Posiciona os botões flutuantes (WhatsApp/Gympass) de forma mais segura */
+    .topo .botões {
+        position: fixed;
+        bottom: 20px; /* Fixa no rodapé da tela */
+        right: 20px;
+        top: auto; /* Remove o posicionamento antigo */
+        flex-direction: row; /* Coloca um ao lado do outro para ocupar menos altura */
+    }
+    
+    .topo .botões img {
+        width: 50px; /* Diminui os ícones */
+    }
+
+    /* Conteúdo descritivo */
+    main .p1 .conteudo {
+        flex-direction: column; /* Texto em cima, imagem embaixo */
+    }
+
+    main .p1 .conteudo .imagem-gradiente {
+        width: 100%; /* Ocupa a largura da tela */
+        height: 300px; /* Altura menor */
+        margin-top: 20px;
+    }
+}
+@media (max-width: 900px) { /* Breakpoint um pouco maior pois os planos são largos */
+    .biggest .plan {
+        flex-direction: column; /* Ícone em cima, texto embaixo */
+        height: auto; /* Remove altura fixa */
+        width: 95%; /* Ocupa a tela */
+        margin: 20px auto; /* Centraliza */
+    }
+
+    .mesicon {
+        width: 150px; /* Diminui o ícone */
+        height: auto;
+        margin-bottom: -50px; /* Ajuste visual se necessário */
+        z-index: 2;
+    }
+
+    .direitP {
+        width: 100%; /* Remove os 856px fixos */
+        height: auto;
+        padding: 40px 10px;
+        text-align: center;
+    }
+    
+    .planott {
+        font-size: 18px; /* Ajusta tamanho da fonte do preço */
+    }
+}
+@media (max-width: 768px) {
+    .p5 .topo {
+        align-items: center; /* Centraliza tudo */
+        text-align: center;
+    }
+
+    .p5 .titulos {
+        margin-left: 0; /* Remove a margem enorme */
+        flex-direction: column; /* Empilha os textos */
+        padding: 20px 0;
+    }
+
+    .p5 .titulos hr {
+        display: none; /* Esconde a linha vertical no celular */
+    }
+
+    /* Seção Missão */
+    .p5 .missao {
+        flex-direction: column-reverse; /* Imagem em cima ou embaixo do texto */
+        height: auto;
+    }
+
+    .p5 .missao img {
+        width: 100%; /* Imagem responsiva */
+        height: auto;
+    }
+
+    .p5 p {
+        padding: 20px; /* Reduz padding lateral */
+        font-size: 18px;
+    }
+}
+@media (max-width: 600px) {
+    .geral {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    
+    .aulas {
+        width: 100%; /* Card ocupa a largura total em telas muito pequenas */
+        max-width: 300px; /* Mas não deixa ficar gigante */
+    }
 }

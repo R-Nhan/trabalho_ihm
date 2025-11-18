@@ -1,3 +1,5 @@
+/*FUNÇÃO EM JAVASCRIPT (FEITA COM AUXILIO DE IA)*/
+
 // Espera todo o HTML da página ser carregado antes de rodar o script
 document.addEventListener("DOMContentLoaded", function() {  
     // Chama a função para carregar o header
