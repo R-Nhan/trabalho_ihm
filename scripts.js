@@ -23,48 +23,65 @@ function carregarcomponente(id, url) {
             if (element) {
                 element.innerHTML = data;
                 
-                // IMPORTANTE: Após carregar o header, precisamos corrigir os links do menu
+                // Corrige os links do menu (sua função antiga)
                 corrigirLinksMenu(element);
+                
+                // NOVO: Corrige o caminho das imagens (logo e ícones)
+                corrigirCaminhosImagens(element);
             }
         })
         .catch(error => console.error(error));
 }
 
-/* Função extra para garantir que os links do menu funcionem em qualquer página */
+/* Função para corrigir os links (<a>) */
 function corrigirLinksMenu(element) {
-    // Verifica onde estamos de novo
     const isSubfolder = window.location.pathname.includes("/website/");
-    
-    // Pega todos os links (tags 'a') dentro do header/footer carregado
     const links = element.querySelectorAll('a');
     
     links.forEach(link => {
         const href = link.getAttribute('href');
         
-        // Se for link externo (http) ou âncora (#), ignora
         if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
-        // LÓGICA PARA CORRIGIR OS LINKS:
-        
-        // 1. Se estamos na raiz (index.html) e o link aponta para algo na raiz (ex: index.html)
-        // não precisa mudar nada. Mas se aponta para index.html vindo de fora, ajustamos.
-        
         if (isSubfolder) {
-            // ESTAMOS NA PASTA WEBSITE (ex: p3.html)
-            // Se o link for apenas "index.html", ele quebraria. Temos que mudar para "../index.html"
+            // Estamos na subpasta (ex: p2.html)
             if (href === "index.html" || href === "./index.html") {
                 link.setAttribute('href', "../index.html");
             }
-            // Se o link for para outra página do site (ex: p2.html) e estiver escrito "website/p2.html",
-            // temos que mudar para apenas "p2.html" pois já estamos na pasta website.
             else if (href.includes("website/")) {
                 link.setAttribute('href', href.replace("website/", ""));
             }
         } else {
-            // ESTAMOS NA RAIZ (index.html)
-            // Se o link for "index.html", funciona.
-            // Se o link for "p2.html", vai quebrar. Tem que ser "website/p2.html".
-            // O ideal é que no seu header.html os links para as páginas internas sejam "website/p2.html"
+            // Estamos na raiz (index.html)
+            // Se o link for "index.html", ok.
+            // Se o link apontar para uma página interna sem o prefixo, o padrão HTML já deve resolver,
+            // mas aqui mantemos a lógica existente.
         }
+    });
+}
+
+/* NOVA FUNÇÃO: Garante que as imagens apareçam tanto na raiz quanto nas subpastas */
+function corrigirCaminhosImagens(element) {
+    const isSubfolder = window.location.pathname.includes("/website/");
+    const images = element.querySelectorAll('img');
+
+    images.forEach(img => {
+        const src = img.getAttribute('src');
+        
+        // Se não tiver src ou for imagem externa (http), ignora
+        if (!src || src.startsWith('http')) return;
+
+        // LÓGICA:
+        // O header.html provavelmente tem as imagens como "../imagens/foto.png" (para funcionar nas subpastas).
+        
+        if (!isSubfolder) {
+            // ESTAMOS NA RAIZ (index.html)
+            // Precisamos remover o "../" para virar "./imagens/..." ou apenas "imagens/..."
+            if (src.startsWith("../")) {
+                img.setAttribute('src', src.replace("../", "./"));
+            }
+        } 
+        // Se estivermos na subpasta (isSubfolder = true), o caminho "../" que já está no HTML
+        // é o correto, então não precisamos fazer nada.
     });
 }
