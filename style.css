@@ -366,14 +366,8 @@ h1#titulo2{
         margin: 40px 0;
     }
 }
-.direitP{
-    height: 300px;
-    width: 856px;
-    background-color: #FFD900;
-    display: flex;
-    justify-content: center;
-}
-.plan{
+/* --- DESKTOP (SEM MUDAR NADA) --- */
+.plan {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,57 +376,79 @@ h1#titulo2{
 }
 
 .mesicon {
-    height: 300px;             
+    height: 300px;
     width: 318px;
     margin: 0;
+    object-fit: contain;
 }
+
+.direitP {
+    height: 300px;
+    width: 856px;
+    background-color: #FFD900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .planott {
     text-align: center;
     margin: auto;
 }
-/* === RESPONSIVIDADE REAL PARA CELULAR === */
-@media (max-width: 768px) {
 
-    /* ----- Área dos Planos ----- */
-    .biggest {
-        width: 100%;
-        padding: 0;
-    }
 
+/* --- 📱 RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+
+    /* Imagem em cima e texto embaixo */
     .plan {
         flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    /* Imagem menor e proporcional */
+    .mesicon {
+        width: 70%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    /* Div amarela reduzida, ajusta ao conteúdo */
+    .direitP {
+        width: 90%;
+        max-width: 380px; /* deixa menor no celular */
+        height: auto;     /* altura automática */
+        padding: 25px 20px;
+        background-color: #FFD900;
+        border-radius: 20px;   /* bordas arredondadas */
+        display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px 0;
-        gap: 10px;
     }
 
-    .mesicon {
-        width: 160px;   /* diminui o ícone */
-        height: auto;
-        margin: 0 auto;
+    /* Texto um pouco menor para caber bonito */
+    .planott {
+        font-size: 1.3rem;
+        line-height: 1.4;
     }
+}
 
+/* Telas MUITO pequenas */
+@media (max-width: 450px) {
     .direitP {
-        width: 90%;     /* não ocupa toda a tela */
-        height: auto;
-        padding: 15px;
+        max-width: 300px;
+        padding: 18px;
+        border-radius: 18px;
     }
 
     .planott {
-        font-size: 20px;   /* diminui texto */
-        line-height: 26px;
-        text-align: center;
+        font-size: 1.1rem;
     }
 
-    h1#centro {
-        font-size: 24px;
+    .mesicon {
+        max-width: 200px;
     }
-
-    hr#p2 {
-        width: 95%;
-    }
-
 }
 
 .p5{
