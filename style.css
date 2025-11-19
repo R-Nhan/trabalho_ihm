@@ -220,10 +220,9 @@ h1#centro{
 hr#p2{
     margin: 0;
 }
-
 .aulas{
     width: 236px;
-    height: 394px;
+    height: auto; 
     background-color: black;
     border: 3px solid #FFD900;
     border-radius: 36px;
@@ -233,13 +232,54 @@ hr#p2{
     color: white;
     text-align: center;
     font-size: 22px;
+    padding-bottom: 20px;
+}
+.aulas img{
+    width: 100%;
+    height: auto;
+    border-radius: 36px 36px 0 0;
+    display: block;
 }
 .geral {
     padding: 50px;
     display: flex;
-    gap: 46px; 
-    flex-wrap: wrap; 
+    gap: 46px;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+@media (max-width: 900px){
+    .aulas{
+        width: 200px;
+        font-size: 20px;
+    }
+
+    .geral{
+        padding: 20px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    .aulas{
+        width: 90%;
+        max-width: 320px; 
+        font-size: 18px;
+        border-radius: 30px;
+    }
+
+    .aulas img{
+        border-radius: 30px 30px 0 0;
+    }
+
+    .geral{
+        padding: 10px;
+        gap: 20px;
+    }
+
+    h1#centro{
+        font-size: 28px;
+    }
 }
 p#horario{
     margin: 0;
