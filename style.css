@@ -390,6 +390,51 @@ h1#titulo2{
     text-align: center;
     margin: auto;
 }
+/* === RESPONSIVIDADE REAL PARA CELULAR === */
+@media (max-width: 768px) {
+
+    /* ----- Área dos Planos ----- */
+    .biggest {
+        width: 100%;
+        padding: 0;
+    }
+
+    .plan {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .mesicon {
+        width: 160px;   /* diminui o ícone */
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .direitP {
+        width: 90%;     /* não ocupa toda a tela */
+        height: auto;
+        padding: 15px;
+    }
+
+    .planott {
+        font-size: 20px;   /* diminui texto */
+        line-height: 26px;
+        text-align: center;
+    }
+
+    h1#centro {
+        font-size: 24px;
+    }
+
+    hr#p2 {
+        width: 95%;
+    }
+
+}
+
 .p5{
     padding: 0px 10px;
     background-color: black;
